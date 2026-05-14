@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f172a; /* Deep blue */
+  --color-secondary: #f59e0b; /* Soft orange/yellow */
+  --color-accent: #3b82f6; /* Lighter blue */
+  
+  --color-bg-light: #ffffff;
+  --color-text-light: #1e293b;
+  
+  --color-bg-dark: #0f172a;
+  --color-text-dark: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-slate-900 text-slate-50;
+  }
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+}
+.dark .glass {
+  @apply bg-slate-800/70 border-slate-700/50;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-slate-700;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
